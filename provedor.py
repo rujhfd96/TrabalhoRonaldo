@@ -9,9 +9,9 @@ def converter():
     valor = data.get('valor')
     moeda = data.get('moeda')
 
-    # Lógica para converter moeda (exemplo: fixar valor da cotação)
-    cotacao_dolar = 5.2
-    cotacao_euro = 6.2
+    
+    cotacao_dolar = 4.9
+    cotacao_euro = 5.2
 
     if moeda == 'Dólar':
         valor_convertido = valor * cotacao_dolar
