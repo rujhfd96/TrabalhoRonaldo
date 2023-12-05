@@ -1,20 +1,13 @@
 import subprocess
 import time
 
+# Iniciar provedores
+provedor1 = subprocess.run(["python", "primeiro_provedor.py"])
+provedor2 = subprocess.run(["python", "segundo_provedor.py"])
 
-subprocess.Popen(["python", "primeiro_provedor.py"])
+# Aguardar um curto período para garantir que os provedores estejam prontos
+time.sleep(2)
 
-
-time.sleep(1)
-
-
-subprocess.Popen(["python", "segundo_provedor.py"])
-
-
-time.sleep(1)
-
-
-subprocess.Popen(["python", "primeiro_consumidor.py"])
-
-
-subprocess.Popen(["python", "segundo_consumidor.py"])
+# Iniciar consumidores
+consumidor1 = subprocess.run(["python", "primeiro_consumidor.py"])
+consumidor2 = subprocess.run(["python", "segundo_consumidor.py"])
