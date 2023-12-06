@@ -9,16 +9,16 @@ def converter3():
     valor = data.get('valor')
     destino = data.get('destino')
 
-    cotacao_usd = 4.9  # Cotação para Dólar (USD)
-    cotacao_eur = 5.2  # Cotação para Euro (EUR)
-    cotacao_gbp = 7.4  # Cotação para Libra Esterlina (GBP)
-    cotacao_jpy = 0.049  # Cotação para Iene Japonês (JPY)
-    cotacao_inr = 0.071  # Cotação para Rúpia Indiana (INR)
-    cotacao_aud = 4.0  # Cotação para Dólar Australiano (AUD)
-    cotacao_cad = 4.2  # Cotação para Dólar Canadense (CAD)
-    cotacao_chf = 5.8  # Cotação para Franco Suíço (CHF)
-    cotacao_cny = 0.82  # Cotação para Yuan Chinês (CNY)
-    cotacao_sek = 0.6  # Cotação para Coroa Sueca (SEK)
+    cotacao_usd = 4.9  
+    cotacao_eur = 5.2  
+    cotacao_gbp = 7.4  
+    cotacao_jpy = 0.049  
+    cotacao_inr = 0.071  
+    cotacao_aud = 4.0  
+    cotacao_cad = 4.2  
+    cotacao_chf = 5.8  
+    cotacao_cny = 0.82  
+    cotacao_sek = 0.6  
 
     if destino == 'EUA':
         valor_convertido = valor * cotacao_usd
@@ -56,4 +56,4 @@ def converter3():
     return jsonify({'valor_convertido': valor_convertido, 'moeda_destino': moeda_destino})
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5002)  # Defina uma porta diferente para cada provedor
+    app.run(debug=True, port=5002)  
