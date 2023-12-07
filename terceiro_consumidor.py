@@ -1,4 +1,15 @@
+
 import requests
+
+def consumir_provedor3(url_provedor3, data):
+    response = requests.post(url_provedor3, json=data)
+
+    if response.status_code == 200:
+        resultado = response.json()
+        return resultado
+    else:
+        print(f'Erro na solicitação: {response.status_code}')
+        return None
 
 url_provedor3 = 'http://127.0.0.1:5002/converter3'
 
@@ -8,12 +19,9 @@ print("Opções de países: EUA, Europa, Reino Unido, Japão, Índia, Austrália
 destino = input('País de destino: ')
 
 data = {'valor': valor, 'destino': destino}
-response = requests.post(url_provedor3, json=data)
+resultado_consumidor_3 = consumir_provedor3(url_provedor3, data)
 
-if response.status_code == 200:
-    resultado = response.json()
-    valor_convertido = resultado['valor_convertido']
-    moeda_destino = resultado['moeda_destino']
+if resultado_consumidor_3:
+    valor_convertido = resultado_consumidor_3['valor_convertido']
+    moeda_destino = resultado_consumidor_3['moeda_destino']
     print(f'Valor convertido para {moeda_destino}: {valor_convertido:.2f}')
-else:
-    print(f'Erro na solicitação: {response.status_code}')

@@ -21,34 +21,34 @@ def converter3():
     cotacao_sek = 0.6  
 
     if destino == 'EUA':
-        valor_convertido = valor * cotacao_usd
+        valor_convertido = valor / cotacao_usd
         moeda_destino = 'Dólar (USD)'
     elif destino == 'Europa':
-        valor_convertido = valor * cotacao_eur
+        valor_convertido = valor / cotacao_eur
         moeda_destino = 'Euro (EUR)'
     elif destino == 'Reino Unido':
-        valor_convertido = valor * cotacao_gbp
+        valor_convertido = valor / cotacao_gbp
         moeda_destino = 'Libra Esterlina (GBP)'
     elif destino == 'Japão':
-        valor_convertido = valor * cotacao_jpy
+        valor_convertido = valor / cotacao_jpy
         moeda_destino = 'Iene Japonês (JPY)'
     elif destino == 'Índia':
-        valor_convertido = valor * cotacao_inr
+        valor_convertido = valor / cotacao_inr
         moeda_destino = 'Rúpia Indiana (INR)'
     elif destino == 'Austrália':
-        valor_convertido = valor * cotacao_aud
+        valor_convertido = valor / cotacao_aud
         moeda_destino = 'Dólar Australiano (AUD)'
     elif destino == 'Canadá':
-        valor_convertido = valor * cotacao_cad
+        valor_convertido = valor / cotacao_cad
         moeda_destino = 'Dólar Canadense (CAD)'
     elif destino == 'Suíça':
-        valor_convertido = valor * cotacao_chf
+        valor_convertido = valor / cotacao_chf
         moeda_destino = 'Franco Suíço (CHF)'
     elif destino == 'China':
-        valor_convertido = valor * cotacao_cny
+        valor_convertido = valor / cotacao_cny
         moeda_destino = 'Yuan Chinês (CNY)'
     elif destino == 'Suécia':
-        valor_convertido = valor * cotacao_sek
+        valor_convertido = valor / cotacao_sek
         moeda_destino = 'Coroa Sueca (SEK)'
     else:
         return jsonify({'erro': 'País de destino não suportado'}), 400
